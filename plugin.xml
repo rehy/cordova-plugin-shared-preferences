@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-shared-preferences" version="0.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>Cordova Plugin for Android SharedPreferences</name>
+    <description>Cordova plugin for Android's Native key value storage system.</description>
+    <author>Ratson</author>
+    <license>MIT</license>
+    <keywords>cordova,android,shared-preferences</keywords>
+
+    <js-module name="SharedPreferences" src="www/SharedPreferences.js">
+        <clobbers target="SharedPreferences" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SharedPreferences">
+                <param name="android-package"
+                    value="name.ratson.cordova.plugin.SharedPreferencesPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/SharedPreferencesPlugin.java"
+            target-dir="src/name/ratson/cordova/plugin" />
+    </platform>
+</plugin>
